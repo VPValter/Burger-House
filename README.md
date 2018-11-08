@@ -5,3 +5,5 @@
 - Includes Google maps, although with an API key that can only make one or two requests a day due to regional issues with my account.
 
 ### View live using GitHub Pages:
+
+https://vpvalter.github.io/Burger-House/dist/index.html
