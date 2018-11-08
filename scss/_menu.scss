@@ -1,0 +1,85 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  background: rgba($color-dark, 0.9);
+  color: $color-light;
+  display: flex;
+  padding: 16px 0;
+  justify-content: center;
+}
+
+// Logo
+.logo {
+  position: fixed;
+  left: 30px;
+
+  img {
+    width: 160px;
+  }
+}
+
+// Nav Menu
+.nav-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline;
+
+    a {
+      text-decoration: none;
+      color: $color-light;
+      padding: 0 15px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      text-align: center;
+
+      &:hover {
+        color: $color-accent;
+        @include ease;
+      }
+    }
+  }
+}
+
+// Menu Button
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 30px;
+  top: 20px;
+  cursor: pointer;
+  visibility: hidden;
+  @include ease;
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: $color-light;
+    @include ease;
+  }
+
+  &.close {
+    transform: rotate(180deg);
+
+    .btn-line {
+      // Line 1 - Rotate
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      // Line 2 - Hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      // Line 3 - Rotate
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+// LG - max 1200px
+@include lg {
+  main {
+    .main-left {
+      width: 25vw;
+
+      img {
+        margin-left: -620px;
+      }
+    }
+
+    .main-center {
+      width: 50vw;
+    }
+
+    .main-right {
+      width: 25vw;
+    }
+  }
+
+  .section-1 {
+    min-height: 100vh;
+    grid-template-columns: repeat(2, 1fr);
+
+    .box img {
+      width: 100%;
+    }
+
+    .box:nth-child(odd) {
+      justify-self: end;
+      text-align: end;
+    }
+    .box:nth-child(even) {
+      justify-self: start;
+      text-align: start;
+    }
+  }
+}
+
+// MD - max 900px
+@include md {
+  header {
+    min-height: 23px;
+
+    .nav-menu {
+      display: none;
+
+      &.show {
+        display: initial;
+        animation: slide-from-up 0.4s ease-out;
+
+        li {
+          display: block;
+          padding: 10px 0;
+        }
+      }
+    }
+    .menu-btn {
+      visibility: visible;
+    }
+  }
+
+  main {
+    .main-left,
+    .main-right {
+      width: 0;
+      display: none;
+    }
+    .main-center {
+      width: 100vw;
+    }
+  }
+
+  #our-menu .right .menu-prices {
+    grid-template-columns: 100% auto;
+
+    .menu-right {
+      display: none;
+      width: 0;
+    }
+  }
+
+  #locations {
+    padding: 0 6vw;
+  }
+}
+
+// SM - max 600px
+@include sm {
+  header .logo {
+    display: none;
+  }
+
+  main {
+    .main-center {
+      width: 100%;
+
+      h1 {
+        font-size: 10vw;
+      }
+      h3 {
+        font-size: 5vw;
+      }
+    }
+  }
+
+  .section-1 {
+    grid-template-columns: 1fr;
+    padding: 60px 0;
+  }
+
+  .section-2,
+  .section-3 {
+    grid-template-columns: auto 90% auto;
+  }
+
+  #our-menu {
+    grid-template-columns: auto 100%;
+    background-position: right;
+  }
+
+  #locations {
+    padding: 75px 12px;
+    grid-template-columns: repeat(2, 1fr);
+
+    .heading {
+      grid-column-start: span 2;
+    }
+
+    .rv-left,
+    .rv-right {
+      grid-column-start: span 1;
+    }
+
+    .address-1,
+    .address-2 {
+      grid-column-start: span 2;
+    }
+    #gmap-1,
+    #gmap-2 {
+      grid-column-start: span 2;
+      height: 220px;
+    }
+  }
+}

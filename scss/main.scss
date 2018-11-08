@@ -1,0 +1,235 @@
+@import 'config';
+@import 'menu';
+
+// BODY & GENERAL
+@-moz-document url-prefix() {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding-top: 0.5rem;
+  text-transform: uppercase;
+}
+
+p {
+  color: $color-secondary;
+}
+
+span {
+  color: $color-accent;
+}
+
+// MAIN
+main {
+  height: 100vh;
+  background: url(../img/table-dark.jpg) center;
+  background-size: cover;
+  color: $color-light;
+  display: flex;
+
+  .main-left {
+    text-align: center;
+    width: 30vw;
+    height: 100%;
+
+    img {
+      position: absolute;
+      margin-left: -550px;
+      max-height: 80vh;
+      top: 10vh;
+      animation: slide-from-left 1s ease-out;
+    }
+  }
+
+  .main-center {
+    padding: 0 15px;
+    margin: 0;
+    text-align: center;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-size: 5rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+  }
+
+  .main-right {
+    text-align: left;
+    width: 30vw;
+
+    img {
+      position: absolute;
+      max-height: 80vh;
+      top: 25vh;
+      animation: slide-from-right 1s ease-out;
+    }
+  }
+}
+
+// "ABOUT"
+.section-1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-content: center;
+  min-height: 75vh;
+  padding: 5px 0;
+
+  img {
+    border: 1px solid;
+  }
+
+  .box {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    padding: 10px;
+    max-width: 336px;
+  }
+}
+
+.section-2,
+.section-3 {
+  display: grid;
+  grid-template-columns: auto 50% auto;
+  justify-content: center;
+  align-content: center;
+  min-height: 35vh;
+  text-align: center;
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+.section-2 {
+  background: url(../img/fries-ketchup.jpg) center;
+  background-size: cover;
+}
+.section-3 {
+  background: url(../img/burger-disassembled.jpg) center;
+  background-size: cover;
+  color: $color-light;
+}
+
+// MENU (Jelovnik)
+#our-menu {
+  background: url(../img/buger-meal-table.jpg) center;
+  background-size: cover;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  color: $color-light;
+  font-size: 120%;
+
+  .right {
+    padding: 15px;
+    max-width: 460px;
+
+    span {
+      font-style: italic;
+      font-size: 130%;
+    }
+
+    .menu-prices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-content: center;
+      font-weight: bold;
+
+      .menu-right {
+        text-align: end;
+        color: $color-accent;
+      }
+    }
+  }
+
+  p {
+    color: $color-light;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Locations
+#locations {
+  font-size: 110%;
+  min-height: calc(100vh - 50px);
+  padding: 0 15vw;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-gap: 25px;
+  align-content: center;
+  align-items: center;
+
+  span {
+    font-weight: bold;
+  }
+
+  .heading {
+    grid-column-start: span 6;
+    text-align: center;
+
+    span {
+      font-style: italic;
+      font-size: 130%;
+      font-weight: normal;
+    }
+  }
+
+  .rv-left,
+  .rv-right {
+    grid-column-start: span 3;
+    text-align: center;
+  }
+
+  .address-1,
+  .address-2 {
+    grid-column-start: span 2;
+  }
+  #gmap-1,
+  #gmap-2 {
+    grid-column-start: span 4;
+    height: 220px;
+    border-radius: 6px;
+  }
+}
+
+footer {
+  text-align: center;
+  background: rgba($color-dark, 0.9);
+  min-height: 26px;
+  padding: 12px;
+
+  p {
+    color: $color-light;
+    margin: 0;
+  }
+}
+
+@import 'responsive';
